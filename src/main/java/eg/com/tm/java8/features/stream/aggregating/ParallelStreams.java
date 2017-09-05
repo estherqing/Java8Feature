@@ -33,7 +33,7 @@ public class ParallelStreams {
             strings.add("Item " + i);
         }
         strings.stream()
-                .parallel()
+                .parallel() // 变成并行流，查看输出结果
                 .forEach(str -> System.out.println(str));
     }
 }

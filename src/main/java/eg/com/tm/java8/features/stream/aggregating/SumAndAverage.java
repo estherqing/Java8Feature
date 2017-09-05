@@ -36,15 +36,16 @@ public class SumAndAverage {
         people.add(new Person("Malik", 6));
 
         int sum = people.stream()
-                .mapToInt(p -> p.getAge())
+                .mapToInt(p -> p.getAge()) // mapToInt()从复合类型中获取简单的基本类型数据，创建流对象
                 .sum();
         System.out.println("Total of ages " + sum);
 
+        // 考虑除数为0的情况，所以声明为Optional类型
         OptionalDouble avg = people.stream()
                 .mapToInt(p -> p.getAge())
                 .average();
 
-        if (avg.isPresent()) {
+        if (avg.isPresent()) { // 通过 isPresent() 来确保它确实是一个double值
             System.out.println("Average: " + avg.getAsDouble());
         } else {
             System.out.println("Average was not calculated");

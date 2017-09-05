@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author mohamed_taman
  */
 public class CountItems {
@@ -35,9 +34,11 @@ public class CountItems {
 
 //        strings.stream()
 //                .forEach(str -> System.out.println(str));
-        long count = strings.stream().parallel().count();
+        long start = System.currentTimeMillis();
+        long count = strings.stream().parallel().count(); // 加了parallel()之后耗时变多
+        long end = System.currentTimeMillis();
         System.out.println("Count: " + count);
-
+        System.out.println("Total time is: " + (end - start));
     }
 
 }

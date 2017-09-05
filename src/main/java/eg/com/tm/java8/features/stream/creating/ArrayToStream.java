@@ -17,27 +17,27 @@
 package eg.com.tm.java8.features.stream.creating;
 
 import eg.com.tm.java8.features.stream.model.Person;
-import java.util.Arrays;
+
 import java.util.stream.Stream;
 
 /**
- *
  * @author mohamed_taman
+ *  从数组创建流
  */
 public class ArrayToStream {
 
     public static void main(String args[]) {
 
         Person[] people = {
-            new Person("Mohamed", 69),
-            new Person("Doaa", 25),
-            new Person("Malik", 6)};
+                new Person("Mohamed", 69),
+                new Person("Doaa", 25),
+                new Person("Malik", 6)};
 
 //        for (int i = 0; i < people.length; i++) {
 //            System.out.println(people[i].getInfo());
 //        }
-//        Stream<Person> stream = Stream.of(people);
-        Stream<Person> stream = Arrays.stream(people);
+        Stream<Person> stream = Stream.of(people);
+//        Stream<Person> stream = Arrays.stream(people);
         stream.forEach(p -> System.out.println(p.getInfo()));
     }
 

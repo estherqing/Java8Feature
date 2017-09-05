@@ -17,12 +17,12 @@
 package eg.com.tm.java8.features.stream.traversing;
 
 import eg.com.tm.java8.features.stream.model.Person;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
 /**
- *
  * @author mohamed_taman
  */
 public class SequentialStream {
@@ -41,8 +41,7 @@ public class SequentialStream {
 
     }
 
-    private static void displayPeople(List<Person> people,
-            Predicate<Person> pred) {
+    private static void displayPeople(List<Person> people, Predicate<Person> pred) {
 
         System.out.println("Selected:");
 //        people.forEach(p -> {
@@ -51,8 +50,12 @@ public class SequentialStream {
 //            }
 //        });
 
-        people.stream()
-                .filter(pred)
-                .forEach(p -> System.out.println(p.getName()));
+        people.stream().forEach(p -> {
+            System.out.println(p.getName());
+        });
+
+//        people.stream()
+//                .filter(pred)
+//                .forEach(p -> System.out.println(p.getName()));
     }
 }
